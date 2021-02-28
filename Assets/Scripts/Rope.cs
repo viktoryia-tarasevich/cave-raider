@@ -23,8 +23,8 @@ public class Rope : MonoBehaviour
     //Объект к которому прицепляется веревка
     public Rigidbody2D connectedObject;
 
-    public bool IsDecreasing { get; set; }
-    public bool IsIncreasing { get; set; }
+    public bool isIncreasing { get; set; }
+    public bool isDecreasing { get; set; }
 
     // Start is called before the first frame update
     void Start()
@@ -43,7 +43,7 @@ public class Rope : MonoBehaviour
 
         SpringJoint2D topSegmentJoint = topSegment.GetComponent<SpringJoint2D>();
 
-        if (IsIncreasing)
+        if (isIncreasing)
         {
             if (topSegmentJoint.distance >= maxRopeSegmentLength)
             {
@@ -54,7 +54,7 @@ public class Rope : MonoBehaviour
                 topSegmentJoint.distance += ropeSpeed * Time.deltaTime;
             }
         }
-        if (IsDecreasing)
+        if (isDecreasing)
         {
             if (topSegmentJoint.distance <= 0.005f)
             {
@@ -96,8 +96,8 @@ public class Rope : MonoBehaviour
 
         ropeSegments = new List<GameObject>();
 
-        IsDecreasing = false;
-        IsIncreasing = false;
+        isDecreasing = false;
+        isIncreasing = false;
 
         CreateRopeSegment();
     }

@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
 public class Swinging : MonoBehaviour
 {
     public float swingSensitivity = 100.0f;
